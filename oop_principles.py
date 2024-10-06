@@ -54,3 +54,32 @@ account.deposit(value=100)
 print(f"\nAccount Balance after deposit: {account.get_balance()}")
 account.withdraw(value=500)
 print(f"\nAccount Balance after withdraw: {account.get_balance()}")
+
+
+print(f"\nAbstraction Example")
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+  @abstractmethod
+  def turn_on(self):
+    pass
+
+  @abstractmethod
+  def turn_off(self):
+    pass
+
+class Car(Vehicle):
+  def __init__(self) -> None:
+    pass
+
+  def turn_on(self):
+    return "Car turned on..."
+
+  def turn_off(self):
+    return "Car turned off..."
+
+
+car = Car()
+
+print(f"{car.turn_on()}")
+print(f"{car.turn_off()}")
